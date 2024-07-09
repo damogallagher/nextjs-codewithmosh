@@ -23,3 +23,13 @@ https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-
 Intelligent Tailwind CSS tooling for VS Code
 
 https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss
+
+
+# Create next app
+
+npx create-next-app@13.4
+
+## Run dev server
+cd  next-first-app
+
+npm run dev
