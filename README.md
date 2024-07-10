@@ -24,6 +24,11 @@ Intelligent Tailwind CSS tooling for VS Code
 
 https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss
 
+### Prisma
+
+Adds syntax highlighting, formatting, auto-completion, jump-to-definition and linting for .npx prisma files.
+
+https://marketplace.visualstudio.com/items?itemName=Prisma.prisma
 
 # Create next app
 
@@ -34,3 +39,50 @@ cd  next-first-app
 
 npm run dev
 
+## Run mysql in docker
+
+Ensure docker is running
+
+docker-compose up
+
+## npx prisma setup
+
+### Set up a new npx prisma project
+
+npx prisma init
+
+### Create migrations from your npx prisma schema, apply them to the database, generate artifacts (e.g. npx prisma Client)
+
+npx prisma migrate dev
+
+### Generate artifacts (e.g. npx prisma Client)
+
+npx prisma generate
+
+### Browse your data
+
+npx prisma studio
+
+### Pull the schema from an existing database, updating the npx prisma schema
+
+npx prisma db pull
+
+### Push the npx prisma schema state to the database
+
+npx prisma db push
+
+### Validate your npx prisma schema
+
+npx prisma validate
+
+### Format your npx prisma schema
+
+npx prisma format
+
+### Display npx prisma version info
+
+npx prisma version
+
+### Display npx prisma debug info
+
+npx prisma debug
