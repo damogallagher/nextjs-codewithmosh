@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react'
 import { sort } from 'fast-sort';
-
+ 
 interface User {
     id: number;
     name: string;
