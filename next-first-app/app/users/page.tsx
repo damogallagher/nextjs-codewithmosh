@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react'
 import UserTable from './UserTable'
 import Link from 'next/link';
+import { Metadata } from 'next';
 
 
 interface Props {
@@ -26,3 +27,7 @@ const UsersPage = ({ searchParams: { sortOrder } }: Props) => {
 }
 
 export default UsersPage
+
+export const metadata: Metadata = {
+  title: "Users Page"
+}

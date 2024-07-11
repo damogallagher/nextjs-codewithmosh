@@ -9,7 +9,7 @@ interface Props {
 export async function GET(request: NextRequest, { params }: Props) {
 
     const user = await prismaClient.user.findUnique({
-        where: { id: parseInt(params.userId) }
+        where: { id: params.userId }
     })
 
     if (!user)
@@ -29,7 +29,7 @@ export async function PUT(request: NextRequest, { params }: Props) {
 
     const user = await prismaClient.user.findUnique({
         where: {
-            id: parseInt(params.userId)
+            id: params.userId
         }
     })
 
@@ -54,7 +54,7 @@ export async function DELETE(request: NextRequest, { params }: Props) {
 
     const user = await prismaClient.user.findUnique({
         where: {
-            id: parseInt(params.userId)
+            id: params.userId
         }
     })
 
@@ -63,7 +63,7 @@ export async function DELETE(request: NextRequest, { params }: Props) {
 
     await prismaClient.user.delete({
         where: {
-            id: parseInt(params.userId)
+            id: params.userId
         }
     })
 
