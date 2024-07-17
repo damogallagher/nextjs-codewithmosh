@@ -30,7 +30,12 @@ const AssigneeSelect = ({ issue }: Props) => {
     if (error) return null;
 
     const assignIssue = (userId: string) => {
-        axios.patch(`/api/issues/${issue.id}`, { assignedToUserId: userId || null })
+        let assignedToUserId = null;
+
+        if (userId && userId !== "unassigned") 
+            assignedToUserId = userId;
+
+        axios.patch(`/api/issues/${issue.id}`, { assignedToUserId: assignedToUserId })
             .catch(() => {
                 toast.error('Changes could not be saved')
             })
@@ -42,7 +47,7 @@ const AssigneeSelect = ({ issue }: Props) => {
                 <Select.Content>
                     <Select.Group>
                         <Select.Label>Suggestions</Select.Label>
-                        <Select.Item value="">Unassigned</Select.Item>
+                        <Select.Item value="unassigned">Unassigned</Select.Item>
                         {users?.map(user => (
                             <Select.Item key={user.id} value={user.id}>
                                 {user.name}

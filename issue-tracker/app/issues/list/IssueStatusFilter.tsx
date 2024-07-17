@@ -4,8 +4,7 @@ import { Select } from '@radix-ui/themes'
 import { useRouter, useSearchParams } from 'next/navigation'
 import React from 'react'
 
-const statuses: { label: string, value?: Status }[] = [
-    { label: 'All' },
+const statuses: { label: string, value: Status }[] = [
     { label: 'Open', value: 'OPEN' },
     { label: 'In Progress', value: 'IN_PROGRESS' },
     { label: 'Closed', value: 'CLOSED' }
@@ -28,6 +27,9 @@ const IssueStatusFilter = () => {
         }}>
             <Select.Trigger placeholder='Filter by status...' />
             <Select.Content>
+                <Select.Item key="all" value='all'>
+                        All
+                </Select.Item>
                 {statuses.map(status => (
                     <Select.Item key={status.value} value={status.value || ''}>
                         {status.label}
