@@ -30,8 +30,7 @@ const IssuesPage = async ({ searchParams }: Props) => {
     ? searchParams.status
     : undefined
 
-  const orderBy =
-    columns.map(column => column.value)
+  const orderBy = columns.map(column => column.value)
       .includes(searchParams.orderBy)
       ? { [searchParams.orderBy]: 'asc' }
       : undefined;
@@ -50,7 +49,7 @@ const IssuesPage = async ({ searchParams }: Props) => {
         <Table.Header>
           <Table.Row>
             {columns.map(column =>
-              <Table.ColumnHeaderCell key={column.value}>
+              <Table.ColumnHeaderCell key={column.value} className={column.className}>
                 <NextLink href={{
                   query: { ...searchParams, orderBy: column.value }
                 }}>
